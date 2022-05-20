@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        images = [
+        images :  [
             {
                 src: 'img/01.jpg',
                 title: 'Svezia',
@@ -27,6 +27,6 @@ var app = new Vue({
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
-        ];
+        ]
     }
-  })
+  });
