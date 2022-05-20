@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+        indexPosition : 0,
         images :  [
             {
                 src: 'img/01.jpg',
@@ -28,5 +29,13 @@ var app = new Vue({
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
         ]
+    }, methods : {
+        scrollDown() {
+            if (this.indexPosition === this.images.length - 1) {
+                this.indexPosition = 0;
+            } else {
+            this.indexPosition++;
+            }
+        }
     }
   });
