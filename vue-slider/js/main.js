@@ -36,6 +36,13 @@ var app = new Vue({
             } else {
             this.indexPosition++;
             }
+        },
+        scrollUp() {
+            if (this.indexPosition === 0) {
+                this.indexPosition = this.images.length - 1;
+            } else {
+            this.indexPosition--;
+            }
         }
     }
   });
