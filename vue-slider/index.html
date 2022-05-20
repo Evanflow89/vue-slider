@@ -27,7 +27,7 @@
         <div class="thumbs">
             <div class="prev" @click="scrollUp()"></div>
 
-            <div class="thumb" v-for="(image, index) in images">
+            <div class="thumb" v-for="(image, index) in images" :class="indexPosition === index ? 'active' : null">
                 <img :src="image.src" :alt="image.title">
             </div> 
             
