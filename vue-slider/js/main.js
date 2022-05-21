@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {
         indexPosition : 0,
+        timer: null,
         images :  [
             {
                 src: 'img/01.jpg',
@@ -29,8 +30,12 @@ var app = new Vue({
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
         ]
-    }, methods : {
-        scrollDown() {
+    },
+    mounted: function () {
+        this.startRotation();
+        },
+     methods : {
+        scrollDown : function() {
             if (this.indexPosition === this.images.length - 1) {
                 this.indexPosition = 0;
             } else {
@@ -43,6 +48,14 @@ var app = new Vue({
             } else {
             this.indexPosition--;
             }
-        }
+        },
+        startRotation: function() {
+            this.timer = setInterval(this.scrollDown, 3000);
+            },
+           
+            stopRotation: function() {
+            clearTimeout(this.timer);
+            this.timer = null;
+            },
     }
   });
