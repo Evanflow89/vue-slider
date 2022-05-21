@@ -15,7 +15,8 @@
     
         <div class="items">
             
-            <div class="item active">
+            <div class="item active" v-on:mouseover="stopRotation"
+            v-on:mouseout="startRotation">
                 <img :src="images[indexPosition].src" :alt="images[0].title">
                 <div class="text">
                     <h3>Lorem</h3>
